@@ -1,0 +1,116 @@
+@import '_general';
+
+.card {
+    height: 440px;
+    width: 250px;
+    background-color: $background-card;
+    box-shadow: 0 0 7px 8px hsl(217, 52%, 10%);
+    border-radius: 10px;
+    padding: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include flex(flex, column, normal, space-between);
+
+    .image {
+        width: 100%;
+        height: 220px;
+        position: relative;
+
+        .nft-image {
+            height: 100%;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .content {
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            position: absolute;
+            @include flex(flex, column, center, center);
+            background-color: hsla(178, 100%, 50%, 0.5);
+            border-radius: 5px;
+            cursor: pointer;
+            opacity: 0;
+            transition: all .8s;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    .nft-description {
+        height: 35%;
+        width: 100%;
+        border-bottom: 1px solid $line-color;
+        @include flex(flex, column, normal, space-evenly);
+
+        .nft-name {
+            width: max-content;
+            color: $white;
+            font-size: 16px;
+            font-weight: 600;
+            transition: color .8s;
+            &:hover {
+                color: $cyan;
+            }
+        }
+        
+        .nft-paragraph {
+            font-weight: 300;
+            font-size: 12px;
+        }
+
+        div {
+            @include flex(flex, row, center, space-between);
+            .price {
+                img {
+                    margin-right: 5px;
+                }
+                h2 {
+                    color: $cyan;
+                    font-weight: 400;
+                    font-size: 12px;
+                }
+            }
+            .time {
+                img {
+                    margin-right: 5px;
+                }
+                h3 {
+                    font-size: 12px;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+
+    .nft-owner {
+        @include flex(flex, row, center, flex-start);
+        margin: 10px 0 10px 0;
+        img {
+            height: 20px;
+            width: 20px;
+            margin-right: 5px;
+            border: 1px solid $white;
+            border-radius: 50%;
+        }
+        h3 {
+            font-size: 10px;
+            font-weight: 300;
+            span {
+                font-size: 10px;
+                color: $white;
+                transition: color .8s;
+                &:hover {
+                    color: $cyan;
+                }
+            }
+        }
+    }
+}
+
+@import '_footer';

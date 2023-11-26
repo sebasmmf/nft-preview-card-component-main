@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+// Tipography
+$font-primary: 'Outfit';
+
+// Primary colors
+$soft-blue: hsl(215, 51%, 70%);
+$cyan: hsl(178, 100%, 50%);
+
+// Colors
+$background: hsl(217, 54%, 11%);
+$background-card: hsl(216, 50%, 16%);
+$line-color: hsl(215, 32%, 27%);
+$white: hsl(0, 0%, 100%);
+
+@mixin flex($display, $direction, $align, $justify) {
+    display: $display;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: $soft-blue;
+    font-family: $font-primary;
+    font-size: 14px;
+}
+
+body {
+    @include flex(flex, column, center, flex-end);
+    background-color: $background;
+    height: 100vh;
+    width: 100%;
+}
